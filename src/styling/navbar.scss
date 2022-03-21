@@ -1,0 +1,109 @@
+$mainColor:#585CC6;
+
+.navbar-container {
+    width:100%;
+    background-color: white;
+    display:flex;
+    justify-content: space-between;
+    padding:15px;
+    justify-items: center;
+    top:0;
+    .profile-logo-container {
+        display: flex;
+        justify-content: space-between;
+        #name {
+            display:flex;
+            justify-items:center;
+            align-items: center;
+            margin-left: 10px;
+            cursor: default;
+        }
+        #photo {
+            max-height: 54px;
+            overflow: hidden;
+            max-width: 54px;
+            border-radius:2px;
+            img {
+                max-width: 100px;
+            }
+        }
+    }
+    .logo-container {
+        text-align:center;
+        color: $mainColor;
+        cursor:pointer;
+        a {
+            text-decoration:none;
+            color:$mainColor;
+            #ilink {
+                font-size:30px;
+                font-weight:bold;
+            }
+            #academy {
+                font-size:14px;
+            }
+        }
+    }
+    .panel-control-container {
+        display: flex;
+        a {
+            text-decoration:none;
+            background-color: $mainColor;
+            color:white;
+            text-align: center;
+            padding:17px;
+            border-radius:2px;
+            #icon {
+                display: none;
+            }
+        }
+    }
+}
+@media screen and (max-width:905px) {
+    .navbar-container {
+        .profile-logo-container {
+            #name {
+                font-size: 10px;
+                position: absolute;
+                left: 45px;
+                top: 25px;
+            }
+            #photo {
+                height: 32px;
+                width: 32px;
+                img {
+                    object-fit: cover;
+                    height:32px;
+                    width: 32px;
+                }
+            }
+        }
+        .logo-container {
+            a {
+                #ilink {
+                    font-size:17px;
+                    
+                }
+                #academy {
+                    font-size:8px;
+                    font-weight: bold;
+                }
+            }
+        }
+        .panel-control-container {
+            a {
+                padding:10px;
+                #icon {
+                    display: flex;
+                    svg {
+                        width:10px;
+                        height:10px;
+                    }
+                }
+                #text {
+                    display: none;
+                }
+            }
+        }
+    }
+}

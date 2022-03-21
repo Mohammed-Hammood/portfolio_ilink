@@ -1,0 +1,63 @@
+$mainColor:#585CC6;
+.footer-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    .footer-section {
+
+        width:100%;
+        justify-content: space-between;
+        padding:15px 40px;
+        display:flex;
+        background-color: white;
+        color:black;
+        .icons-container {
+            display: flex;
+            justify-content: center;
+            gap:10px;
+            a {
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 19px;
+            height: 19px;
+            overflow: hidden;
+            border-radius: 50%;
+        }
+        svg {
+            width:20px;
+        }
+        .vk {
+            width:20px;
+            height: 20px;
+            border-radius:50%;
+            display: inline-flex;
+            align-items:center;
+            justify-content: center;
+            overflow: hidden;
+        }
+    }
+}
+}
+
+@media screen and (max-width:905px){
+    .footer-container {
+        .footer-section {
+
+            flex-direction: column;
+            .text-container {
+                width: 100%;
+                text-align:center;
+                font-size: 13px;
+                
+            }
+            .icons-container {
+                width:100%;
+                margin-top:10px;
+            }
+            
+        }
+    }
+}
