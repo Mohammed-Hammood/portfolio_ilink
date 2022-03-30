@@ -1,5 +1,7 @@
+const localStorageName = 'reviews-ik-portfolio-1a#';
+
 export const addNewReview = ({surname, about=null, photo=null})=> {
-    const data = JSON.parse(localStorage.getItem("reviews-ik-portfolio")) || createNewData({surname:surname, about:about});
+    const data = JSON.parse(localStorage.getItem(localStorageName)) || createNewData({surname:surname, about:about});
     let itemFound = false;
     const item = {
         surname:surname,
@@ -18,7 +20,7 @@ export const addNewReview = ({surname, about=null, photo=null})=> {
     }
     else{
         data.push(item);
-        localStorage.setItem('reviews-ik-portfolio', JSON.stringify(data));
+        localStorage.setItem(localStorageName, JSON.stringify(data));
         return true;
     }
 }
@@ -30,13 +32,13 @@ const createNewData = ({surname=null, about=null, photo=null})=> {
         date:getFullDate(),
         photo:localStorage.getItem('image') || null
     }
-    if(surname===null){localStorage.setItem('reviews-ik-portfolio', JSON.stringify([])); return [];}
+    if(surname===null){localStorage.setItem(localStorageName, JSON.stringify([])); return [];}
     data.push(newItem);
-    localStorage.setItem('reviews-ik-portfolio', JSON.stringify(data));
+    localStorage.setItem(localStorageName, JSON.stringify(data));
     return data;
 }
 export const getReviews = ()=> {
-    const data = JSON.parse(localStorage.getItem("reviews-ik-portfolio")) || createNewData({});
+    const data = JSON.parse(localStorage.getItem(localStorageName)) || createNewData({});
     return data;
 }
 const getFullDate = ()=> {
